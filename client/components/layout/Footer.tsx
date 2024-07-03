@@ -31,7 +31,7 @@ const socialIcons = [
   {
     icon: <GithubIcon width={iconWidth} />,
     label: 'GitHub',
-    href: 'https://github.com/yunwi5/code-like-pro',
+    href: 'https://github.com/sperez927/pro-coding',
   },
 ];
 
@@ -47,7 +47,7 @@ const Footer: React.FC = () => {
         className="flex flex-col lg:flex-row text-2xl"
       />
       <div className="flex flex-col sm:flex-row items-center gap-x-5 lg:ml-5 lg:mr-auto">
-        <p className="whitespace-nowrap text-gray-600/90">Copyright &copy; {currentYear} Yunwi5</p>
+        <p className="whitespace-nowrap text-gray-600/90">Copyright &copy; {currentYear} Salvador</p>
         <div className="flex gap-4 text-gray-700">
           {footerLinks.map((link, idx) => (
             <Link key={idx} href={link.href} className="link-underline-effect">

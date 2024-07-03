@@ -17,41 +17,41 @@ const forumPostRouter = require('../routes/forumPost');
 const badgeRouter = require('../routes/badge');
 
 const createApp = () => {
-    const app = express();
+  const app = express();
 
-    // handle cors issue from the client
-    app.use(
-        cors({
-            origin: true,
-            methods: ['GET', 'PUT', 'POST', 'PATCH', 'DELETE'],
-        }),
-    );
+  // handle cors issue from the client
+  app.use(
+    cors({
+      origin: true,
+      methods: ['GET', 'PUT', 'POST', 'PATCH', 'DELETE'],
+    }),
+  );
 
-    // Allow express to parse JSON
-    app.use(express.json({ limit: '50mb' }));
-    app.use(express.urlencoded({ limit: '50mb', extended: false }));
+  // Allow express to parse JSON
+  app.use(express.json({ limit: '50mb' }));
+  app.use(express.urlencoded({ limit: '50mb', extended: false }));
 
-    // Register default error handler
-    app.use(errorHandler);
+  // Register default error handler
+  app.use(errorHandler);
 
-    return app;
+  return app;
 };
 
 const registerRoutes = (app) => {
-    app.use('/api', router);
-    app.use('/api/auth', authRouter);
+  app.use('/api', router);
+  app.use('/api/auth', authRouter);
 
-    app.use('/api/exercise', exerciseRouter);
-    app.use('/api/submission', userSubmissionRouter);
-    app.use('/api/editorSettings', userEditorSettingsRouter);
-    app.use('/api/user', userRouter);
-    app.use('/api/showcase', showCaseRouter);
-    app.use('/api/comment', commentRouter);
-    app.use('/api/report', exerciseReportRouter);
-    app.use('/api/ranking', rankingRouter);
-    app.use('/api/image', imageRouter);
-    app.use('/api/forumPost', forumPostRouter);
-    app.use('/api/badge', badgeRouter);
+  app.use('/api/exercise', exerciseRouter);
+  app.use('/api/submission', userSubmissionRouter);
+  app.use('/api/editorSettings', userEditorSettingsRouter);
+  app.use('/api/user', userRouter);
+  app.use('/api/showcase', showCaseRouter);
+  app.use('/api/comment', commentRouter);
+  app.use('/api/report', exerciseReportRouter);
+  app.use('/api/ranking', rankingRouter);
+  app.use('/api/image', imageRouter);
+  app.use('/api/forumPost', forumPostRouter);
+  app.use('/api/badge', badgeRouter);
 };
 
 module.exports = { createApp, registerRoutes };
